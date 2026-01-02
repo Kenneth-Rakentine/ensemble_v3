@@ -1,0 +1,136 @@
+<!-- ENSEMBLE — norns script logo (SVG)
+     Concept: particle → swarm → mass continuum + DNA-helix murmuration + orchestral cluster “ribbons”.
+     Edit the CSS variables in :root to recolor quickly.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="ENSEMBLE logo">
+  <defs>
+    <style>
+      :root{
+        --bg: #0b0d12;
+        --fg: #f2f4ff;
+        --muted: rgba(242,244,255,.55);
+        --thin: rgba(242,244,255,.28);
+        --accent: rgba(242,244,255,.90);
+      }
+      .bg { fill: var(--bg); }
+      .ring { fill: none; stroke: var(--thin); stroke-width: 10; }
+      .ribbon { fill: none; stroke: var(--muted); stroke-width: 16; stroke-linecap: round; }
+      .ribbon2 { fill: none; stroke: var(--thin); stroke-width: 10; stroke-linecap: round; }
+      .spine { fill: none; stroke: var(--accent); stroke-width: 7; stroke-linecap: round; stroke-dasharray: 2 18; }
+      .node { fill: var(--fg); }
+      .nodeSoft { fill: var(--fg); opacity: .55; }
+      .word { fill: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+              font-weight: 700; letter-spacing: .22em; }
+      .sub { fill: var(--muted); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+             font-weight: 500; letter-spacing: .14em; }
+    </style>
+
+    <!-- soft glow for the “mass” cluster -->
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"></feGaussianBlur>
+      <feColorMatrix in="b" type="matrix" values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 0.55 0" result="g"></feColorMatrix>
+      <feMerge>
+        <feMergeNode in="g"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
+    <!-- Clip to keep the mark clean inside the outer ring -->
+    <clipPath id="clipCircle">
+      <circle cx="512" cy="470" r="360"></circle>
+    </clipPath>
+  </defs>
+
+  <!-- Background (set to 'none' if you want transparency) -->
+  <rect class="bg" x="0" y="0" width="1024" height="1024" rx="80"></rect>
+
+  <!-- Outer containment ring -->
+  <circle class="ring" cx="512" cy="470" r="394"></circle>
+
+  <!-- Main mark -->
+  <g clip-path="url(#clipCircle)">
+    <!-- Two “orchestral ribbons” that braid (cluster swells) -->
+    <path class="ribbon" d="M206 372
+         C302 270, 442 260, 512 332
+         C582 404, 720 408, 818 312"></path>
+    <path class="ribbon" d="M206 568
+         C310 674, 450 688, 512 608
+         C574 528, 726 510, 818 620"></path>
+
+    <!-- Secondary wisps (more particulate/pointillist) -->
+    <path class="ribbon2" d="M230 462 C328 420, 418 420, 512 470 C606 520, 700 520, 794 470"></path>
+    <path class="ribbon2" d="M246 506 C336 560, 420 560, 512 516 C604 472, 692 472, 778 520"></path>
+
+    <!-- DNA-ish spines (dashed = grains) -->
+    <path class="spine" d="M340 220
+         C420 300, 420 380, 340 460
+         C260 540, 260 620, 340 700
+         C420 780, 420 860, 340 940"></path>
+    <path class="spine" d="M684 220
+         C604 300, 604 380, 684 460
+         C764 540, 764 620, 684 700
+         C604 780, 604 860, 684 940"></path>
+
+    <!-- “Mass” cluster at the center (dense grains) -->
+    <g filter="url(#glow)">
+      <circle class="nodeSoft" cx="512" cy="470" r="120"></circle>
+      <circle class="nodeSoft" cx="512" cy="470" r="78"></circle>
+    </g>
+
+    <!-- Particle nodes along the braid (sparse → dense) -->
+    <g>
+      <!-- left sparse dots -->
+      <circle class="nodeSoft" cx="250" cy="432" r="8"></circle>
+      <circle class="nodeSoft" cx="280" cy="400" r="6"></circle>
+      <circle class="nodeSoft" cx="310" cy="380" r="5"></circle>
+      <circle class="nodeSoft" cx="272" cy="540" r="7"></circle>
+      <circle class="nodeSoft" cx="302" cy="572" r="6"></circle>
+      <circle class="nodeSoft" cx="332" cy="596" r="5"></circle>
+
+      <!-- mid density dots -->
+      <circle class="node" cx="412" cy="382" r="9"></circle>
+      <circle class="nodeSoft" cx="452" cy="410" r="7"></circle>
+      <circle class="node" cx="468" cy="548" r="9"></circle>
+      <circle class="nodeSoft" cx="430" cy="562" r="7"></circle>
+
+      <!-- dense “stipple” around center -->
+      <circle class="node" cx="486" cy="438" r="6"></circle>
+      <circle class="node" cx="540" cy="446" r="6"></circle>
+      <circle class="node" cx="522" cy="418" r="5"></circle>
+      <circle class="node" cx="502" cy="510" r="6"></circle>
+      <circle class="node" cx="548" cy="510" r="5"></circle>
+      <circle class="node" cx="516" cy="534" r="5"></circle>
+      <circle class="nodeSoft" cx="476" cy="470" r="4"></circle>
+      <circle class="nodeSoft" cx="566" cy="474" r="4"></circle>
+      <circle class="nodeSoft" cx="512" cy="396" r="4"></circle>
+      <circle class="nodeSoft" cx="512" cy="548" r="4"></circle>
+
+      <!-- right sparse dots -->
+      <circle class="nodeSoft" cx="774" cy="424" r="8"></circle>
+      <circle class="nodeSoft" cx="744" cy="396" r="6"></circle>
+      <circle class="nodeSoft" cx="716" cy="372" r="5"></circle>
+      <circle class="nodeSoft" cx="760" cy="540" r="7"></circle>
+      <circle class="nodeSoft" cx="732" cy="572" r="6"></circle>
+      <circle class="nodeSoft" cx="704" cy="600" r="5"></circle>
+    </g>
+
+    <!-- “Call & response” ticks (Morse-like) -->
+    <g opacity=".65">
+      <path class="ribbon2" d="M140 470 H210"></path>
+      <path class="ribbon2" d="M150 492 H182"></path>
+      <path class="ribbon2" d="M814 470 H884"></path>
+      <path class="ribbon2" d="M842 492 H874"></path>
+      <circle class="nodeSoft" cx="132" cy="470" r="5"></circle>
+      <circle class="nodeSoft" cx="892" cy="470" r="5"></circle>
+    </g>
+  </g>
+
+  <!-- Wordmark -->
+  <g>
+    <text class="word" x="512" y="900" text-anchor="middle" font-size="56">ENSEMBLE</text>
+    <text class="sub" x="512" y="944" text-anchor="middle" font-size="20">STRING TEXTURE GENERATOR</text>
+  </g>
+</svg>
