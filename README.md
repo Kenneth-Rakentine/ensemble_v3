@@ -2,7 +2,7 @@
 fragmented audio looping norns script<br>
 -- 
 <br>
-## ENSEMBLE v3.1<br>
+**ENSEMBLE v3.1**<br>
 Smooth Grains + Continuous [early SOFTCUT-ONLY Iteration]
 <br>
 ================================<br>
@@ -14,7 +14,7 @@ E3: Movement<br>
 ================================<br>
 <br>
 
-##INSTRUCTIONS:<br>
+**INSTRUCTIONS:**<br>
 -load script <br>
 -ensure that your softcut input levels are turned up: main norns menu, page 4/4, go down to "SOFTCUT", make sure levels are aaround at least 0db. Sometimes they reset to -INF<br>
 -press K2 button to start recording<br>
