@@ -1,5 +1,9 @@
 # ensemble_v3<br>
-fragmented audio looping norns script<br>
+fragmenteded audio looping norns script<br>
+<p align="center">
+  <img src="ensemble-logo.svg" width="360">
+</p>
+
 -- 
 <br>
 ENSEMBLE v3.1<br>
