@@ -6,7 +6,7 @@ fragmenteded string texture generator for norns<br>
 
 
 <br>
-ENSEMBLE v3.1<br>
+ENSEMBLE v.11<br>
 Smooth Grains + Continuous [early SOFTCUT-ONLY Iteration]
 <br>
 ================================<br>
